@@ -5,20 +5,25 @@
  */
 package com.lu.cms.service.impl;
 
+import com.lu.cms.dao.CmsArticleCategoryMapper;
 import com.lu.cms.model.CmsArticleCategory;
 import com.lu.cms.service.CmsArticleCategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author huanlu
  */
+@Service
 public class CmsArticleCategoryServiceImpl implements CmsArticleCategoryService{
-
     
+    @Autowired
+    private CmsArticleCategoryMapper cmsArticleCategoryMapper;
     
     @Override
     public int deleteByPrimaryKey(Integer articleCategoryId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return cmsArticleCategoryMapper.deleteByPrimaryKey(articleCategoryId);
     }
 
     @Override
@@ -33,7 +38,8 @@ public class CmsArticleCategoryServiceImpl implements CmsArticleCategoryService{
 
     @Override
     public CmsArticleCategory selectByPrimaryKey(Integer articleCategoryId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String string = String.valueOf(1);
+        return cmsArticleCategoryMapper.selectByPrimaryKey(articleCategoryId);
     }
 
     @Override
